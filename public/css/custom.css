@@ -1,0 +1,44 @@
+.clear {
+  clear:both;
+}
+.navbar {
+  background-color: green;
+}
+h4 {
+  text-decoration: underline;
+}
+.recoverPasswordForm {
+  display: none;
+}
+.errors {
+  color: red;
+}
+.signUpButton {
+  background-color: red;
+  color: white;
+}
+.userMenu {
+  float: right;
+}
+.userPlayInfo {
+  font-size: 20px;
+  float: left;
+}
+h6 {
+  color:red;
+}
+hr {
+  clear: both;
+}
+.imageFloater {
+  float: left;
+}
+.liner {
+  color: green;
+}
+.question-hider {
+  display: none;
+}
+.check-assessment-clock {
+  font-size: 20px;
+}

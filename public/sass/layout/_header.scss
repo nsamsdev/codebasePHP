@@ -1,0 +1,74 @@
+/* Header Style */
+@import 'nav';
+
+header{
+  min-height: 106px;
+
+  .row-lan-nav{
+    display: block;
+    height:30px;
+  }
+
+  .search-form{
+    width: 80px;
+    display: none;
+    input[type='search']{
+      border: 1px solid $color__white;
+      color: $color__black;
+      font-size: 1.2rem;
+      text-align: right;
+      position: relative;
+    }
+    button{
+      @include removespace;
+      border: 0;
+      background-color:transparent;
+      color:$color__red;
+      position: absolute;
+      right:0;
+      top:5px;
+    }
+  }
+  .main-logo{
+    max-width: 350px;
+  }
+}
+
+
+///* Responsive Style */
+
+
+/*==========  Mobile First Method  ==========*/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 640px) {
+
+
+}
+
+
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 340px) {
+}

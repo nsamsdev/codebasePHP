@@ -1,0 +1,19 @@
+/*!
+Theme Name: Ethical MedTech
+Theme URI: http://ethicalmedtech.org/
+Author: ACW
+Author URI: http://acw.uk.com/
+Description: A custom theme for the Ethical MedTech build 2017
+Version: 1.0.0
+**/
+
+// Vendors
+@import '../css/external.css';
+
+//app CSS
+@import "vendor_overrides";
+@import "variables/common";
+@import "layout/layout";
+@import 'responsive';
+@import 'responsive_embeds';
+@import "print";

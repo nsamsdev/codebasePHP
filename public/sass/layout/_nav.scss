@@ -1,0 +1,62 @@
+/************************************
+***    Main Menu                  ***
+*************************************/
+
+.main-nav-wrapper{
+  #main-nav{
+    text-align: right;
+    li{
+      display: inline-block;
+      text-align: right;
+      padding-left: 10px;
+
+
+      a{
+          color:$color__purple;
+          font-size: 1.3rem;
+
+          text-align: right;
+          position: relative;
+          text-decoration: none;
+
+          &:hover, &:focus{
+            color: $color__black;
+          }
+          &:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #000;
+            visibility: hidden;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+          }
+          &:hover:before {
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+          }
+
+        }
+
+        &.current-menu-item, &.current-page-ancestor, &.current-page-parent{
+          a{
+            color:$color__black;
+            text-decoration: underline;
+          }
+        }
+
+      &.active{
+        a{
+          color:$color__black;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

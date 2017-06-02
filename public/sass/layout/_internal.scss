@@ -1,0 +1,604 @@
+/* Internal Styles */
+
+#page-masterhead{
+  height: 200px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  .page-heading{
+    display: flex;
+
+    h1{
+      font-size: 5.6rem;
+      color:$color__white;
+    }
+  }
+
+  //background imgs
+  &.general{
+    background: url('../images/banner_wildcard.jpg') no-repeat center center;
+    background-size:cover;
+  }
+  &.cvs{
+    background: url('../images/banner_CVS.jpg') no-repeat center center;
+    background-size:cover;
+  }
+  &.ec{
+    background: url('../images/banner_Ethical_Charter.jpg') no-repeat center center;
+    background-size:cover;
+  }
+  &.tm{
+    background: url('../images/banner_TransparentMeTech.jpg') no-repeat center center;
+    background-size:cover;
+  }
+}
+
+main{
+
+  padding-top: 80px;
+  padding-bottom:80px;
+
+  .col-sub-nav{
+
+    ul.sub_menu{
+
+      li{
+        text-align: right;
+        list-style-type: none;
+        padding-bottom: 10px;
+
+        a{
+          color:$color_nav_txt;
+          text-transform: uppercase;
+          transition: all 0.5s ease;
+          font-size: 1.2rem;
+          padding: 5px;
+          position: relative;
+          text-decoration: none;
+
+          &:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: $color__purple;
+            visibility: hidden;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+          }
+
+          &:hover:before {
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+          }
+
+          &:hover{
+            color: $color__purple;
+          }
+
+        }
+
+        &.page_ec_account{
+
+
+          a{
+            background-color: $color__red !important;
+            color:$color__white;
+          }
+        }
+
+        &.current_page_item{
+
+          a{
+            color:$color__purple;
+            font-weight: bold;
+          }
+
+
+        }
+
+      }
+    }
+  }
+
+  .col-main-content{
+    &.col-sm-9{
+      border-left:solid 1px $color__lgrey;
+    }
+  }
+  .content-entry{
+
+    h2{
+      font-size: 2.5rem;
+      color:$color__purple;
+      @include removespace;
+      padding-bottom: 20px;
+    }
+  }
+
+  hr{
+    background-color: $color__lgrey;
+  }
+}
+
+//about page
+.row-about-us-brochure{
+  padding: 20px;
+  background-color: $color__dgrey;
+  color: $color__white;
+  .col-lg-4{
+    color: $color__white;
+  }
+  .col-lg-8{
+    color: $color__white;
+    h2,p {
+      color: $color__white;
+    }
+  }
+}
+
+//accordion style
+.ethical-accordion{
+  .card{
+    border-width:0px;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    .card-header{
+      @include removespace;
+      background-color: transparent;
+      border: solid 1px $color__mblue;
+      h5{
+        a{
+
+          font-size: 1.6rem;
+          display: block;
+          padding: 8px 10px;
+          background-color: $color__mblue;
+          color:$color__white;
+
+          &:before{
+            font-family: 'FontAwesome';
+            content:'\f068';
+            width: 50px;
+            font-size: 1.2rem;
+            font-weight: normal;
+            text-decoration: none;
+          }
+
+          &.collapsed{
+            background-color: $color__white;
+            color:$color__mblue;
+            &:before{
+              content: '\f067';
+              width: 50px;
+              font-size: 1.2rem;
+              font-weight: normal;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+//ethical charter login page
+#ethical-charter-login-panel{
+  background: url('../images/EthicalMedtech_login_bg.jpg') no-repeat center center;
+  height: 600px;
+  width: 100%;
+  background-size: cover;
+
+  h1{
+    font-size: 5.6rem;
+    color:$color__white;
+  }
+
+  .col-sign-in{
+    h2{
+      color: $color__white;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+    label{
+      font-size: 1.5rem;
+      color:$color__white;
+    }
+    input[type=text], input[type=password]{
+      height: 30px;
+      border-width: 0px;
+    }
+    .label-remember{
+      font-size: 1.1rem;
+      position: relative;
+      top:-3px;
+      padding-left: 5px;
+    }
+
+    .lnk-reset-pw{
+      color:$color__white;
+      font-size: 1rem;
+    }
+  }
+  .col-register{
+    h2{
+      color: $color__white;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+    p{
+      color: $color__white;
+    }
+  }
+
+}
+
+
+
+//summary of EOI
+.summary-of-eoi {
+  .heading{
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  .UI{
+    font-size: 3rem;
+    color: $color_nav_txt;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  hr{
+    height: 1px;
+    background-color: $color__red;
+    width:100%;
+    overflow: hidden;
+    clear:both;
+  }
+  .sub-heading{
+    color:$color__mblue;
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  .col-data{
+    label{
+      font-weight: bold;
+      padding-right: 10px;
+    }
+    .icon-assessment-status{
+      img{
+        width: 12px;
+      }
+    }
+  }
+}
+
+.row-download-files{
+  margin: 0;
+}
+.col-download-files, .col-upload-files{
+  @include removespace;
+  padding: 15px;
+  background-color: $color_bg_grey;
+}
+
+//user profile
+.user-profile{
+  .heading{
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  .UI{
+    font-size: 3rem;
+    color: $color_nav_txt;
+    font-weight: bold;
+    font-style: italic;
+  }
+  hr{
+    height: 1px;
+    background-color: $color__red;
+    width:100%;
+    overflow: hidden;
+    clear:both;
+  }
+  hr.inter{
+    background-color: $color__lgrey;
+  }
+  .col-data{
+    label{
+      display: inline-block;
+      width: 35%;
+      text-align: right;
+      padding-right:1%;
+    }
+
+    input[type=text], input[type=password], input[type=email]{
+      width: 62%;
+    }
+  }
+
+  h4{
+    font-size: 1.8rem;
+    color:$color__mblue;
+    padding-bottom: 5px;
+  }
+}
+
+//expression of interest
+.expression-of-interest-form{
+  form{
+    label{
+      text-transform: uppercase;
+      color: $color__mblue;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=url], textarea{
+      border: solid 1px $color__lgrey;
+      height: 30px;
+
+      &:focus{
+        border: solid 1px $color__purple;
+      }
+    }
+
+  }
+}
+.staff_member_wrap{
+  border: solid 1px $color__lgrey;
+  padding: 10px 20px 20px 20px;
+  margin-bottom: 10px;
+  background-color: #dcdcdc;
+
+  input[type=text],input[type=email]{
+
+    display: inline-block;
+  }
+  i{
+
+  }
+}
+
+//reset eoi form
+
+#reset-eoi-form{
+  h1{ color: $color__purple}
+  h2{ color: $color_nav_txt; padding-bottom: 15px;}
+}
+
+//webinar
+.content-webinar{
+  ol{
+    li{
+      line-height: 140%;
+    }
+  }
+}
+
+//admin nav
+.login_nav_container {
+  background: $color_nav_txt;
+  color:$color__white;
+
+  .login_nav_menu {
+    padding-top: 10px;
+    padding-left:0;
+    li {
+      display: inline-block;
+      list-style-type: none;
+      padding-right: 20px;
+      a{
+        color:$color__white;
+        text-transform: uppercase;
+      }
+      &.active{
+        font-weight: bold;
+        @include square_bracket;
+        color: $color__white;
+      }
+      &.ec-self-assessment{
+        a{
+
+        }
+      }
+    }
+  }
+  .col-user{
+    padding-top: 10px;
+    a{
+      color: $color__white;
+
+    }
+  }
+}
+
+//self assessment
+.disabled-btn{
+  background-color: #bdc3c7;
+  color: rgba(0, 132, 168, 0.75);
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  cursor: not-allowed;
+  border: none;
+  border-radius: 5px;
+}
+
+video::-internal-media-controls-download-button {
+  display:none;
+}
+
+video::-webkit-media-controls-enclosure {
+  overflow:hidden;
+}
+
+video::-webkit-media-controls-panel {
+  width: calc(100% + 30px); /* Adjust as needed */
+}
+
+//start self assessment
+.col-question-panel{
+
+  .heading{
+    color: $color__purple;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  .question_section{
+    color: $color_cal_lblue;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  .question{
+    font-size: 1.4rem;
+    color:$color__black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .answer{
+
+    .box-select{
+      width: 30px;
+      float: left;
+    }
+    .choice{
+      width: 90%;
+      float: left;
+      color: $color_nav_txt;
+      margin-top: -5px;
+
+      .span{
+
+      }
+    }
+  }
+}
+
+.process_bar{
+  @include removespace;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+
+  li{
+    display: table-cell;
+    width: auto;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    transition: all 0.5s ease;
+
+    span{
+      height: 2px;
+      width: 100%;
+      background-color: $color__lgrey;
+      display: block;
+    }
+    .fa{
+      position: relative;
+      top: -14px;
+      font-size: 1.2rem;
+      color: $color__lgrey;
+    }
+
+
+    &.done{
+
+      span{
+        background-color: $color__purple;
+      }
+      .fa{
+        color: $color__purple;
+      }
+    }
+    &.unanswered{
+      span{
+        background-color: $color__lgrey;
+      }
+      .fa{
+        color: $color__lgrey;
+      }
+    }
+
+  }
+}
+
+//sitemap
+.sitemap-list{
+  li{
+    list-style-type: none;
+
+    &.top-level{
+      a{
+        color: $color__purple;
+        font-size:1.6rem;
+        font-weight:bold;
+      }
+    }
+    ul{
+      padding-top: 10px;
+    }
+
+    &.second-level{
+      a{
+        color: $color__mblue;
+        font-size:1.4rem;
+        font-weight: bold;
+      }
+    }
+
+    &.third-level{
+      a{
+        color: $color__black;
+        font-size:1.2rem;
+      }
+    }
+  ;
+  }
+}
+/* Generic Landing Page */
+
+//Site-wide element classes
+
+
+//Table styles
+
+
+
+//Media Queries
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}

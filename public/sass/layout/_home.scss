@@ -1,0 +1,230 @@
+/* Homepage Style */
+#homepageboxs{
+  position: relative;
+  background: url('../images/homepage.jpg') no-repeat center center;
+  width: 100%;
+  min-height: 740px;
+  padding-top: 5%;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1;
+
+  .tagline{
+    color: $color__white;
+    font-size: 1.8rem;
+    text-align: center;
+    display: inline-block;
+    line-height: 200%;
+    padding-bottom: 25px;
+  }
+
+  .homebox{
+    display: flex;
+    flex-wrap: wrap;
+
+
+      .homebox-inner{
+      background-color: rgba(255,255,255,0.7);
+      padding: 8%;
+      text-align: center;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      transition: background-color 0.5s ease;
+
+      h2{
+        font-size: 4.5rem;
+        color:$color__purple;
+        line-height: 110%;
+        align-self: flex-start;
+        flex-grow: 1;
+
+        @media screen and (max-width:1200px){
+          font-size: 4rem;
+        }
+        @media screen and (max-width:960px){
+          font-size: 3rem;
+        }
+
+      }
+      p{
+        clear:both;
+        font-size: 1.4rem;
+        flex-grow: 1;
+      }
+      a{
+        color:$color__black;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        font-weight: bold;
+
+      }
+        //hover
+        &:hover{
+          background-color: rgba(255,255,255,1);
+        }
+    }
+
+
+  }
+
+  .bottom{
+    position: absolute;
+    background: url('../images/angle_white.png') no-repeat left bottom;
+    width: 100%;
+    height: 79px;
+    bottom: 0;
+    left: 0;
+  }
+
+}
+
+//event box
+
+.searchConferences {
+
+  h3 {
+    color: $color__purple;
+    padding-top: 5px;
+  }
+
+  form {
+    position: relative;
+    z-index: 1;
+
+    input {
+      position: relative;
+      z-index: 1;
+    }
+
+    button {
+      position: absolute;
+      z-index: 2;
+      right: 5px;
+      top: 8px;
+      background-color: transparent;
+      border: 0px;
+      padding: 5px;
+      border-radius: 0;
+      @include removespace;
+      .fa{
+        color: $color__purple;
+      }
+    }
+  }
+}
+
+
+#conferencebox{
+  position: relative;
+
+  .conferencebox_inner{
+    display: block;
+    padding: 80px !important;
+  }
+
+  .bottom{
+    position: absolute;
+    background: url('../images/angle_grey.png') no-repeat right bottom;
+    width: 100%;
+    height: 79px;
+    bottom: 0;
+    left: 0;
+  }
+
+  .col-calender{
+
+    .calendar_wrap{
+      background: url('../images/loading.gif') no-repeat center center;
+      position: relative;
+      overflow: hidden;
+      width: 1100px;
+      height: 490px;
+      margin-bottom: 50px;
+    }
+      #calendar_container{
+        position:relative;
+        top:-220px;
+        border-width: 0px;
+        overflow: hidden;
+      }
+  }
+
+}
+
+
+
+//latestevents
+#latestEvents{
+
+  position: relative;
+
+  .latestEvents_inner{
+    display: block;
+    background-color: $color__purple;
+    padding: 80px !important;
+    color:$color__white;
+  }
+
+  .date, .location{
+    font-size: 1.1rem;
+  }
+
+  h2{
+    font-weight: bold;
+  }
+  h3{
+    color:$color__white;
+  }
+
+  h4 a{
+    color:$color__white;
+    font-weight: bold;
+  }
+
+
+}
+
+//searchConferences
+#searchConferences{
+  position: relative;
+
+  .searchConferences_inner{
+    display: block;
+    background-color: $color__grey;
+    padding: 30px !important;
+
+    .col-label{
+      h3{
+      font-size: 1.6rem;
+      color:$color__purple;
+      font-weight: bold;
+      }
+    }
+
+    .col-search-conference{
+      input[type=text]{
+        width:100%;
+        border: solid 1px $color__purple;
+        height: 28px;
+        &:focus{
+          border: solid 1px $color__black;
+        }
+      }
+
+
+    }
+  }
+
+  .bottom{
+    position: absolute;
+    background: url('../images/angle_purple.png') no-repeat left bottom;
+    width: 100%;
+    height: 79px;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+//LatestEv
