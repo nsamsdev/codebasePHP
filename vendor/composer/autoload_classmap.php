@@ -448,7 +448,7 @@ return array(
     'SebastianBergmann\\GlobalState\\CodeExporter' => $vendorDir . '/sebastian/global-state/src/CodeExporter.php',
     'SebastianBergmann\\GlobalState\\Exception' => $vendorDir . '/sebastian/global-state/src/exceptions/Exception.php',
     'SebastianBergmann\\GlobalState\\Restorer' => $vendorDir . '/sebastian/global-state/src/Restorer.php',
-    'SebastianBergmann\\GlobalState\\RuntimeException' => $vendorDir . '/sebastian/global-state/src/RuntimeException.php',
+    'SebastianBergmann\\GlobalState\\RuntimeException' => $vendorDir . '/sebastian/global-state/src/exceptions/RuntimeException.php',
     'SebastianBergmann\\GlobalState\\Snapshot' => $vendorDir . '/sebastian/global-state/src/Snapshot.php',
     'SebastianBergmann\\ObjectEnumerator\\Enumerator' => $vendorDir . '/sebastian/object-enumerator/src/Enumerator.php',
     'SebastianBergmann\\ObjectEnumerator\\Exception' => $vendorDir . '/sebastian/object-enumerator/src/Exception.php',

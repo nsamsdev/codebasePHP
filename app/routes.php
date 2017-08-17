@@ -12,5 +12,3 @@ Router::add('home', '/', 'Home@index', ['GET'], [
     'description' => '',
     'keywords' => ''
 ]);
-
-

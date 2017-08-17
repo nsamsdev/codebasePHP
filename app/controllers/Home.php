@@ -37,8 +37,7 @@ class Home extends \CodeBase\Controller
     public function index(array $params)
     {
         $this->setTags();
+        $this->setControllerViewData('name', 'codebase');
         $this->view->render('home', $this->getControllerViewData());
     }
-
-
 }

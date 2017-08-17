@@ -1,7 +1,8 @@
 <?php
 declare(strict_types=1);
 session_start();
-//session_regenerate_id(true);
+session_regenerate_id(true);
+ob_start();
 
 /*
  * function to se and identify the fatal errors as generic errors

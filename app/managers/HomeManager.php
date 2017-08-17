@@ -1,6 +1,7 @@
 <?php
 
 namespace CodeBase\Managers;
+
 use CodeBase\Manager;
 
 if (!defined('CODEBASE')) {
@@ -26,7 +27,5 @@ class HomeManager extends Manager
      */
     public function __construct()
     {
-      
-
     }
 }

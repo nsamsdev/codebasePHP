@@ -82,61 +82,6 @@ class View extends \Smarty
     }
 
 
-    /**
-     *
-     * @param string $templateName
-     * @param array $data
-     */
-    public function adminRender(string $templateName, array $data = [])
-    {
-        $this->assign('route', Router::getAllRoutes());
-        $this->setSiteHeaders($this->siteDefaultSettings);
-        foreach ($data as $key => $value) {
-            if (!in_array($key, $this->assignedData)) {
-                $this->assign($key, $value);
-                $this->assignedData[$key] = $value;
-            }
-        }
-        $this->display('admin/admin_header.tpl');
-        $this->display('admin/'.$templateName . '.tpl');
-        $this->display('admin/admin_footer.tpl');
-    }
-
-    
-    /**
-     *
-     * @param array $data
-     */
-    public function renderHeader(array $data)
-    {
-        $this->setSiteHeaders($this->siteDefaultSettings);
-        $this->customRender(CODEBASE_HEADER_FILE, $data);
-    }
-
-    
-    /**
-     *
-     * @param array $data
-     */
-    public function renderFooter(array $data)
-    {
-        $this->customRender(CODEBASE_FOOTER_FILE, $data);
-    }
-
-    
-    /**
-     *
-     * @param string $file
-     * @param array $data
-     */
-    public function customRender(string $file, array $data)
-    {
-        foreach ($data as $key => $value) {
-            parent::assign($key, $value);
-        }
-        parent::render($file);
-    }
-
 
     /**
     * @param array

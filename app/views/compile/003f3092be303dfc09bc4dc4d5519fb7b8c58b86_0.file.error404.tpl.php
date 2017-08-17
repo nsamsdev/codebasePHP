@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-06-02 17:50:09
+/* Smarty version 3.1.29, created on 2017-08-17 16:35:52
   from "/var/www/html/codebase/app/views/templates/error404.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_59319741545ab9_14019322',
+  'unifunc' => 'content_5995b7d84b60e6_89450061',
   'file_dependency' => 
   array (
     '003f3092be303dfc09bc4dc4d5519fb7b8c58b86' => 
     array (
       0 => '/var/www/html/codebase/app/views/templates/error404.tpl',
-      1 => 1491469036,
+      1 => 1502983703,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_59319741545ab9_14019322 ($_smarty_tpl) {
+function content_5995b7d84b60e6_89450061 ($_smarty_tpl) {
 ?>
 <div id="page-masterhead" class="general error404">
     <div class="container">

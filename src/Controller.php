@@ -96,7 +96,6 @@ class Controller
         $message = $this->getMessage();
         $this->view->assign('message', $message['message']);
         $this->view->assign('messageType', $message['messageType']);
-       
     }
 
 
@@ -193,6 +192,4 @@ class Controller
         $userId = S::getItem($sessionName);
         $this->checkForProtectionDB($userId, $users, $deleted);
     }
-
-
 }

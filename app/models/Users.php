@@ -23,5 +23,4 @@ class Users extends BasicModel
     {
         parent::__construct();
     }
-
 }
