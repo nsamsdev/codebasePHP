@@ -1,1 +1,3 @@
 
+{"timestamp":"2017-08-17 17:01:03:000000","message":"Message: Class 'CodeBase\\Emailer' not found| Code: 0 | File: \/var\/www\/html\/codebase\/setup\/bootstrap.php | Line: 31","ip":"127.0.0.1","id":null}
+{"timestamp":"2017-08-17 17:01:03:000000","message":"Message: Class 'CodeBase\\Emailer' not found| Code: 0 | File: \/var\/www\/html\/codebase\/setup\/bootstrap.php | Line: 31","ip":"127.0.0.1","id":null}
