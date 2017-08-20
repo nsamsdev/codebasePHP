@@ -1,13 +1,14 @@
 <?php
 
 namespace CodeBase;
+
 use CodeBase\SessionManager as S;
 
 if (!defined('CODEBASE')) {
     die('Direct Access Not Allowed');
 }
 
-class Security 
+class Security
 {
     private static $numberKeys = [
         '1' => 'SLKD',
@@ -20,7 +21,7 @@ class Security
         '8' => 'BAR1',
         '9' => 'MAR3',
         '0' => 'WAR7',
-    ];    
+    ];
 
     private static $letterKeys = [
         'a' => '9999',
@@ -69,7 +70,7 @@ class Security
 
         //$value = openssl_encrypt($stringName, 'aes128', self::$encyrptionKey, 0, self::getIv());
         //echo $value . '<br />';
-        return $stringName; 
+        return $stringName;
     }
 
 
@@ -99,8 +100,8 @@ class Security
     {
         //echo self::generateSessionName('hello');die;
         try {
-        S::setItem(self::generateSessionName($sessionName), self::generateSessionValue($value));
-            return true;   
+            S::setItem(self::generateSessionName($sessionName), self::generateSessionValue($value));
+            return true;
         } catch (\Exception $e) {
             return false;
         }
@@ -124,11 +125,5 @@ class Security
         }
 
         return (int)$correctValue;
-
-
     }
-
-
-
-
 }
