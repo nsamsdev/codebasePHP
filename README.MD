@@ -32,21 +32,22 @@ class Home extends Controller
 
 
 ## Routes
-```
-Routes are defined in app/routes.php, 
-	   Add method accespts 5 params, 3 mandatory and 2 optional
-	   first param is the url route, second param is execution method Class@MethodName, third param is the allowed request method
-	   fourth param/optional is boolean, true or false to lock acess to this route based on session set
-	   fifth param/optional is the session key name that must be set to access this route
-	   if you pass 4th param top the add method you must also pass the 5th param
+```php
+/*
+   Routes are defined in app/routes.php, 
+   Add method accespts 5 params, 3 mandatory and 2 optional
+   first param is the url route, second param is execution method Class@MethodName, third param is the allowed request method
+   fourth param/optional is boolean, true or false to lock acess to this route based on session set
+   fifth param/optional is the session key name that must be set to access this route
+   if you pass 4th param top the add method you must also pass the 5th param
+ */
+<?php
+/** @file app/routes.php */
+use CodeBase\Router;
 
-	   <?php
-	   /** @file app/routes.php */
-	   use CodeBase\Router;
-
-	   if (!defined('CODEBASE')) {
-		   die('Direct Access Not Allowed');
-	   }
+if (!defined('CODEBASE')) {
+	die('Direct Access Not Allowed');
+}
 
 
 Router::add('/', 'Home@index', ['GET']);
@@ -106,7 +107,8 @@ class User extends \CodeBase\BASIC_MODEL
 ### Views
 #### From within a controller method call:
 ```php
-$this->view->render('homepage.tpl', $dataArrayToPass);
+/** .tpl is automatically added */
+$this->view->render('homepage', $dataArrayToPass);
 ```
 
 ### Application Structure
@@ -128,10 +130,8 @@ $this->view->render('homepage.tpl', $dataArrayToPass);
 - PdfCreator
 - SessionManager
 - ErrorHandler
-- LoginBoaster
-- Emailer
+- CustomEmailer/PHPMailert
 - HttpRequester
-- ShoppingCart
 - Hooks
 
 #### Feel free to inspect the code for more details as this MVC is still under construction
