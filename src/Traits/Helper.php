@@ -3,6 +3,7 @@
 namespace CodeBase\Traits;
 
 use CodeBase\SessionManager;
+use CodeBase\Security;
 
 if (!defined('CODEBASE')) {
     die('Direct Access Not Allowed');
@@ -33,7 +34,7 @@ trait Helper
      */
     public static function checkAuth(string $sessionName)
     {
-        if (SessionManager::getItem($sessionName) == null) {
+        if (Security::getSession($sessionName) == null) {
             SessionManager::setItem('message', 'You are not allowed to view this page');
             redirectToPage(BASE_URL);
         }

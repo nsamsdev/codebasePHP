@@ -6,7 +6,7 @@ if (!defined('CODEBASE')) {
 use CodeBase\Core;
 use CodeBase\View;
 use CodeBase\Router;
-use CodeBase\Emailer;
+use CodeBase\CustomEmailer as Emailer;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule();

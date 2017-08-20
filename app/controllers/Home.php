@@ -6,6 +6,7 @@ if (!defined('CODEBASE')) {
 use CodeBase\Managers\HomeManager;
 use CodeBase\Router;
 use CodeBase\SessionManager as S;
+use CodeBase\Security as SC;
 
 /**
  * Class General
