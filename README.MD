@@ -1,4 +1,4 @@
-# CodebasePHP - A VERY Simple PHP MMVC (Manager Model View Controller) Framework With Full PHP7 Support
+# CodebasePHP - A VERY Simple PHP VCMM (Views Controllers Managers Models) Framework With Full PHP7 Support
 
 ### Almost no configuration is required apart from the configs file
 
