@@ -2,6 +2,7 @@
   "name": "nsamsdev/codebasephp",
   "type": "framework",
   "description": "Very Basic PHP VCMM Framework",
+  "minimum-stability":"dev",
   "keywords": ["php","framework", "easy framework", "php framework", "smarty framework", "php light framework", "php7", "php7 based framework"],
   "homepage": "https://github.com/nsamsdev/codebasePHP",
   "license": "MIT",
