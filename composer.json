@@ -12,10 +12,7 @@
       "homepage": "https://github.com/nsamsdev",
       "role": "Back-End Developer"
     }
-  ],
-  "require": {
-    "php": ">=7.0.0"
-  },
+  ], 
   "autoload": {
     "psr-4" : {
       "CodeBase\\" : "src/",
@@ -27,6 +24,7 @@
     }
   },
   "require": {
+    "php": ">=7.0.0",
     "nategood/httpful":"0.2.20",
     "monolog/monolog":"1.17.2",
     "sendgrid/sendgrid":"4.0.4",
