@@ -1,4 +1,23 @@
 {
+  {
+    "name": "nsamsdev/codebasephp",
+    "type": "framework",
+    "description": "Very Basic PHP VCMM Framework",
+    "keywords": ["php","framework", "easy framework", "php framework", "smarty framework", "php light framework", "php7", "php7 based framework"],
+    "homepage": "https://github.com/nsamsdev/codebasePHP",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Nihad Hassan",
+        "email": "nihad@mail.vixedin.com",
+        "homepage": "https://github.com/nsamsdev",
+        "role": "Back-End Developer"
+      }
+    ],
+    "require": {
+      "php": ">=7.0.0"
+    }
+  },
   "autoload": {
     "psr-4" : {
       "CodeBase\\" : "src/",
