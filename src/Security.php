@@ -53,54 +53,67 @@ class Security
         '_' => '1111'
     ];
 
-
-    private static $iv;
-
-    private static $encyrptionKey = '98eurhjfi39f9dfKI&^%kdfn!klSOXLA';
-
-
-    private static function generateSessionValue(int $value) : string
+    public function encyrpt(string $sessionName, $value) : array
     {
-        $valueArray = str_split((string)$value);
-        $stringName = '';
+        $sessionName = strtolower($sessionName);
+        $n = '';
+        $s = '';
 
-        foreach ($valueArray as $number) {
-            $stringName .= self::$numberKeys[$number];
+        //set sessiion name
+        foreach (str_split(trim($sessionName)) as $letterOrNumber) {
+            if (is_int($letterOrNumber) || $letterOrNumber == ' ') {
+                throw new \Exception('can not set an int or have a space in a session name');
+            }
+            $n.= self::$letterKeys[$letterOrNumber];
         }
 
-        //$value = openssl_encrypt($stringName, 'aes128', self::$encyrptionKey, 0, self::getIv());
-        //echo $value . '<br />';
-        return $stringName;
+        //set session value
+        foreach (str_split(trim($value)) as $lON) {
+            if ($lON == ' ') {
+                throw new \Exception('session value can not have empty space');
+            }
+            $s.= self::$letterKeys[$lON] ?? self::$numberKeys[$lON];
+        }
+        //$sessionValue = '';
+        return [
+            'name' => $n,
+            'value' => $s
+        ];
     }
 
 
-    private static function getIv()
+    public function decrypt(string $value)
     {
-        $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC);
-        $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND);
-        return $iv;
-    }
-
-    private static function generateSessionName(string $name) : string
-    {
-        $nameArray = str_split(strtolower($name));
-        $stringName = '';
-
-        foreach ($nameArray as $letters) {
-            $stringName .= $letters;
+        $n = '';
+        $flipped1 = array_flip(self::$numberKeys);
+        $flipped2 = array_flip(self::$letterKeys);
+        foreach (str_split($value, 4) as $d) {
+            $n.= $flipped1[$d] ?? $flipped2[$d];
         }
 
-        //$name = openssl_encrypt($stringName, 'aes128', self::$encyrptionKey, 0, self::getIv());
-        //echo $name . '<br />';
-        return $stringName;
+        return $n;
+    }
+
+    public function getSessionName(string $sessionName) : string
+    {
+        $name = strtolower($sessionName);
+        $s = '';
+        //$flipped = array_flip(self::$letterKeys);
+        foreach (str_split($name) as $d) {
+            $s.= self::$letterKeys[$d];
+        }
+
+        return $s;
     }
 
 
-    public function setSession(string $sessionName, int $value) : bool
+
+    public function setSession(string $sessionName, $value) : bool
     {
         //echo self::generateSessionName('hello');die;
+        $encryptedData = (new self)->encyrpt($sessionName, $value);
         try {
-            S::setItem(self::generateSessionName($sessionName), self::generateSessionValue($value));
+            S::setItem($encryptedData['name'], $encryptedData['value']);
             return true;
         } catch (\Exception $e) {
             return false;
@@ -108,22 +121,19 @@ class Security
     }
 
 
-    public function getSession(string $sessionName) : int
+    public function getSession(string $sessionName)
     {
-        $name = strtolower($sessionName);
+        $name = (new self)->getSessionName($sessionName);
         //$name = openssl_encrypt($name, 'aes128', self::$encyrptionKey, 0, self::getIv());
 
         $encryptedValue = S::getItem($name);
 
-        //$trueValue = openssl_decrypt($encryptedValue, 'aes128', self::$encyrptionKey, 0, self::getIv());
-        //return $trueValue;
-        $switchedArray = array_flip(self::$numberKeys);
-
-        $correctValue = '';
-        foreach (str_split($encryptedValue, 4) as $values) {
-            $correctValue .= $switchedArray[$values];
+        if (is_null($encryptedValue)) {
+            return null;
         }
 
-        return (int)$correctValue;
+        //$trueValue = openssl_decrypt($encryptedValue, 'aes128', self::$encyrptionKey, 0, self::getIv());
+        //return $trueValue;
+        return (new self)->decrypt($encryptedValue);
     }
 }
