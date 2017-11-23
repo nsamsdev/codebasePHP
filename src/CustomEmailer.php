@@ -148,15 +148,7 @@ class CustomEmailer
             if ($this->debug == true) {
                 die($this->mailerInstance->ErrorInfo);
             }
-            $to = $this->to;
-            $subject = $this->subject;
-            (new CustomQuery())->addEmailFailed($to, $subject);
-            $this->mailerInstance->setTo((new Admins())->getAdminEmail());
-            $this->mailerInstance->setSubject('Failed to send an email');
-            $message = "Dear Admin <br /><br /> We Failed to send an email: <br />Subject: {$subject} <br />Was Sent To: {$to} <br /><br />Ethical Charter System";
-            $this->mailerInstance->setBody();
-            $this->mailerInstance->send();
-            return false;
+           return false;
         }
         return true;
     }
