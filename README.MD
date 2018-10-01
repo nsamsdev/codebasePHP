@@ -1,6 +1,6 @@
-# CodebasePHP - A VERY Simple PHP VCMM (Views Controllers Managers Models) Framework With Full PHP7 Support
+# CodebasePHP - A VERY Simple PHP MVC Framework With Full PHP7 Support
 
-### Almost no configuration is required apart from the configs file
+
 
 ## Controllers
 ```php
@@ -136,7 +136,7 @@ $this->view->render('homepage', $dataArrayToPass);
 
 #### Feel free to inspect the code for more details as this MVC is still under construction
 
-# Released Open source under MIT Licanse
+# Released Open source under MIT Licence 
 
 
 
