@@ -1,4 +1,4 @@
-# CodebasePHP - A VERY Simple PHP MVC Framework With Full PHP7 Support
+# CodebasePHP - A Simple PHP MVC Framework With Full PHP7 Support
 
 
 
