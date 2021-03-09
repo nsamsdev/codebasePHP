@@ -8,6 +8,7 @@ if (!defined('CODEBASE')) {
     die('Direct Access Not Allowed');
 }
 
+//@todo to review current security setup
 class Security
 {
     private static $numberKeys = [
